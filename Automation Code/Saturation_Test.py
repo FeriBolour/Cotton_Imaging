@@ -24,15 +24,17 @@ database_path = 'somepath' # This needs to be defaulted to a path to avoid retyp
 # Create 2 sub folders inside Main Folder (for .db and .bag)
 
 # Find and Set Saturation Level
-while True:
-    saturation_input = str(input("Enter your saturation level: "))
-    Panes[0].send_keys("roslaunch realsense2_camera opensource_tracking.launch")
-    Panes[1].send_keys(f"rosrun dynamic_reconfigure dynparam set /camera/rgb_camera saturation {saturation_input}")
-    satisfactory = str(input("Is the sat good? 'y' or 'n': "))
-    if satisfactory == 'y' or satisfactory == 'Y':
-        break
-    else:
-        continue
+saturation_input = str(input("Would You like to change saturation levels? 'y' or 'n': "))
+if saturation_input == 'y' or saturation_input == 'Y':
+    while True:
+        saturation_input = str(input("Enter your saturation level: "))
+        Panes[0].send_keys("roslaunch realsense2_camera opensource_tracking.launch")
+        Panes[1].send_keys(f"rosrun dynamic_reconfigure dynparam set /camera/rgb_camera saturation {saturation_input}")
+        satisfactory = str(input("Is the sat good? 'y' or 'n': "))
+        if satisfactory == 'y' or satisfactory == 'Y':
+            break
+        else:
+            continue
 
 # Stop Process in Terminal # 1
 Panes[1].send_keys('C-c', enter=False, suppress_history=False)
@@ -84,6 +86,7 @@ while True:
 
 
     #print('Inside the main while loop')
+    print("Please click ctrl to continue Scanning or esc to exit session!")
     # WAITS FOR AN INPUT FROM KEYBOARD EVERYTIME!!!
     input_3 = keyboard.read_key()
     
