@@ -28,6 +28,7 @@ WB_input = str(input("Would You like to change white balance levels? 'y' or 'n':
 if WB_input == 'y' or WB_input == 'Y':
     while True:
         Panes[0].send_keys("roslaunch realsense2_camera opensource_tracking.launch")
+        time.sleep(5)
         Panes[1].send_keys("rosrun dynamic_reconfigure dynparam set /camera/rgb_camera enable_auto_white_balance False")
         WB_input = str(input("Enter your white balance level: "))
         Panes[1].send_keys(f"rosrun dynamic_reconfigure dynparam set /camera/rgb_camera white_balance {WB_input}")
@@ -124,12 +125,12 @@ while True:
                 set_auto_exposure = change_param + enable_auto_exposure + auto_exposure_input  # Turn off auto exposure (give more options with if and elif for autoexposure enabled vs disabled)
                 set_exposure_level = change_param + exposure_level  # Set exposure level
                 Panes[0].send_keys(set_auto_exposure, enter=True)
-                time.sleep(1)
+                time.sleep(5)
                 Panes[0].send_keys(set_exposure_level, enter=True)
             elif auto_exposure_argument == 'y':
                 set_auto_exposure = change_param + enable_auto_exposure + auto_exposure_input 
                 Panes[0].send_keys(set_auto_exposure, enter=True)
-                time.sleep(1)
+                time.sleep(5)
 
 
         # Start Recording Rosbag file
