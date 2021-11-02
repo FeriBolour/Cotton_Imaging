@@ -20,6 +20,8 @@ for root, dirs, files in os.walk(args.directory):
             os.mkdir("Frames")
             os.system("roslaunch export.launch")
             os.system("mv ~/.ros/frame*.jpg Frames")
-            os.system(f"ffmpeg -framerate 25 -i Frames/frame%04d.jpg -c:v \
+            os.system(f"ffmpeg -framerate 15 -i Frames/frame%04d.jpg -c:v \
                 libx264 -profile:v high -crf 20 -pix_fmt yuv420p {video_name}.mp4")
             os.system(f"zip -r {video_name}_Frames.zip 'Frames'")
+            os.system(f"rtabmap-export --images {video_name}.db")
+            os.system(f"zip -r {video_name}_RTabMap_Images.zip {video_name}_rgb {video_name}_depth camera.yaml")

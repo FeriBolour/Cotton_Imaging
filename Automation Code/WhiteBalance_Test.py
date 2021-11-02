@@ -69,7 +69,7 @@ while True:
 
 # Commands to save Rosbag file
 rosbag_record = 'rosbag record -o /home/avl/Documents/BagFiles/'
-rosbag_data = '.bag /camera/aligned_depth_to_color/image_raw /camera/color/image_raw'
+rosbag_data = '.bag /camera/aligned_depth_to_color/camera_info  camera/aligned_depth_to_color/image_raw /camera/color/camera_info /camera/color/image_raw /camera/imu /camera/imu_info /tf_static'
 
 # Commands to start roslaunch
 launch_ros = 'roslaunch'
@@ -125,12 +125,12 @@ while True:
                 set_auto_exposure = change_param + enable_auto_exposure + auto_exposure_input  # Turn off auto exposure (give more options with if and elif for autoexposure enabled vs disabled)
                 set_exposure_level = change_param + exposure_level  # Set exposure level
                 Panes[0].send_keys(set_auto_exposure, enter=True)
-                time.sleep(5)
+                time.sleep(7)
                 Panes[0].send_keys(set_exposure_level, enter=True)
-            elif auto_exposure_argument == 'y':
-                set_auto_exposure = change_param + enable_auto_exposure + auto_exposure_input 
-                Panes[0].send_keys(set_auto_exposure, enter=True)
-                time.sleep(5)
+            # elif auto_exposure_argument == 'y':
+            #     set_auto_exposure = change_param + enable_auto_exposure + auto_exposure_input 
+            #     Panes[0].send_keys(set_auto_exposure, enter=True)
+            #     time.sleep(7)
 
 
         # Start Recording Rosbag file
