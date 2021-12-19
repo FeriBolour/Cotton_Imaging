@@ -21,3 +21,24 @@ Here's a link to a video demonstrating an instance of the scanning sessions bein
 " target="_blank"><img src="http://img.youtube.com/vi/KzjfbDj-uP8/0.jpg" 
 alt="Cotton Plant Phenotyping Data Acquisition System" width="640" height="360" border="10" /></a>
 
+Here's some images of the Data Acquistion phase:
+
+<table>
+  <tr>
+    <td>Scanning during the day with Natural Lighting</td>
+     <td>Scanning at night with Artificial Lighting</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/day.jpg" width=336 height=448 ></td>
+    <td><img src="https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/night.jpg" width=336 height=448 ></td>
+  </tr>
+ </table>
+
+And here's some instances of PointClouds obtained from a row during one of the scanning sessions:
+![alt text](https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/top.png "Top Camera Example")
+
+![alt text](https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/Bottom.png "Bottom Camera Example")
+
+![alt text](https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/combined.png "The Two Cameras Combined using Colored ICP")
+
+![alt text](https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/statistics.png "Density Analysis of the Cotton Bolls in a Row for Yeild Analysis")
