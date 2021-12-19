@@ -34,11 +34,16 @@ Here's some images of the Data Acquistion phase:
   </tr>
  </table>
 
-And here's some instances of PointClouds obtained from a row during one of the scanning sessions:
+And here's some instances of PointClouds obtained from a row during one of the scanning sessions.
+
+PointCloud Obtained from the Top Camera (Zoomed In):
 <img src="https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/top.png" alt="Top Camera Example" width="730.667" height="384">
 
+PointCloud Obtained from the Bottom Camera:
 <img src="https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/Bottom.png" alt="Bottom Camera Example" width="721.3333" height="282.666666667">
 
+The PointClouds being aligned with a Colored ICP algorithm in Python using the Open3D library:
 ![alt text](https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/combined.png "The Two Cameras Combined using Colored ICP")
 
+Density Analysis of the Cotton Bolls in the Row for Yeild Analysis of the particular seed used for these plants:
 ![alt text](https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/statistics.png "Density Analysis of the Cotton Bolls in a Row for Yeild Analysis")
