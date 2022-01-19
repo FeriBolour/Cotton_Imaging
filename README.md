@@ -47,3 +47,10 @@ The PointClouds being aligned with a Colored ICP algorithm in Python using the O
 
 Density Analysis of the Cotton Bolls in the Row for Yeild Analysis of the particular seed used for these plants:
 ![alt text](https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/statistics.png "Density Analysis of the Cotton Bolls in a Row for Yeild Analysis")
+
+# Organ Detection and Segmentation
+
+We are currently developing 2D and 3D detection and segmentation models. 
+
+Here's some results on **3D Open Boll Detection**:
+
