@@ -54,3 +54,10 @@ We are currently developing 2D and 3D detection and segmentation models.
 
 Here's some results on **3D Open Boll Detection**:
 
+You can see how the algorithm is detection the Open Bolls even when it is surrounded by branches:
+![alt text](https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/OpenBollDetection3_Cropped.gif)
+
+And here's some snapshots of the detection in 3D from different angles:
+![alt text](https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/1bollDetection2_Cropped.png)
+![alt text](https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/bollDetection3_Cropped.png)
+![alt text](https://github.com/FeriBolour/Cotton_Imaging/blob/main/Images/bollDetection_Cropped.png)
