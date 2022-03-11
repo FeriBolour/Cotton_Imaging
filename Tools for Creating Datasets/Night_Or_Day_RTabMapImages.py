@@ -10,19 +10,19 @@ import argparse
 import os
 import glob
 
-#parser = argparse.ArgumentParser(description='How many Night Or Day Images')
-#parser.add_argument("directory", help="Path to the images' directory")
+parser = argparse.ArgumentParser(description='How many Night Or Day Images')
+parser.add_argument("directory", help="Path to the images' directory")
 
-#args = parser.parse_args()
+args = parser.parse_args()
 
 Day = 0
 Night = 0
 
-directory = '/var/Data/Cotton Imaging Datasets/TrimmingAndCountLabel/01_26_2022/Labeled Images'
+#directory = '/var/Data/Cotton Imaging Datasets/TrimmingAndCountLabel/01_26_2022/Labeled Images'
 
 RTabMapImages = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/RTabMap Images/Images'
 
-images = glob.glob (directory + "/*.jpg")
+images = glob.glob (args.directory + "/*.jpg")
 
 for image in images:  
     for root, subdirectories, files in os.walk(RTabMapImages):
@@ -48,4 +48,4 @@ for image in images:
 #                     break
 # =============================================================================
                 
-print(f"Night = {Night}\n\nDay = {Day}")
+print(f"\nNight = {Night}\n\nDay = {Day}\n")

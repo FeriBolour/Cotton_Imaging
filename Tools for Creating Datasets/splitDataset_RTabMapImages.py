@@ -21,7 +21,7 @@ def copy_images(path, directory, Dataset_Path, pathsCounter, is_depth = False):
         files = glob.glob (path + "/*.jpg")
     
     files = sorted(files, key=get_key)
-    counter = 1
+    counter = 0
     filename = directory[directory.rfind('/')+1:]
 
     for myFile in files:
@@ -33,7 +33,7 @@ def copy_images(path, directory, Dataset_Path, pathsCounter, is_depth = False):
 
         counter += 1
         pathsCounter += 1
-    
+        
     return pathsCounter
 
 #----------------------------------------------------------    
@@ -43,11 +43,11 @@ parser.add_argument("directory", help="Path to the Experiments directory")
 
 args = parser.parse_args()
 
-Ethan = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/Splitted Dataset/Ethan'
-Farshad = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/Splitted Dataset/Farshad'
-Irish = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/Splitted Dataset/Irish'
-Long = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/Splitted Dataset/Long'
-Yildirim = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/Splitted Dataset/Yildirim'
+Ethan = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/Splitted Dataset 3/Ethan/Ethan'
+Farshad = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/Splitted Dataset 3/Farshad/Farshad'
+Irish = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/Splitted Dataset 3/Irish/Irish'
+Long = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/Splitted Dataset 3/Long/Long'
+Yildirim = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/Splitted Dataset 3/Yildirim/Yildirim'
 
 RGB_Paths = [Ethan, Farshad, Irish, Long, Yildirim]
 Depth_Paths = [Ethan + '_Depth', Farshad + '_Depth', Irish + '_Depth', Long + '_Depth', Yildirim + '_Depth']
@@ -59,7 +59,6 @@ for root, subdirectories, files in os.walk(args.directory):
         if subdirectory.endswith('rgb') or subdirectory.endswith('left'):
             rgb_path = os.path.join(root, subdirectory)
             depth_path = rgb_path[:rgb_path.rfind('_')+1] + "depth"
-            #rgb_path = "'" + rgb_path + "'"
             copy_images(rgb_path, rgb_path[:rgb_path.rfind('/')], RGB_Paths, pathsCounter)
             pathsCounter = copy_images(depth_path, rgb_path[:rgb_path.rfind('/')], Depth_Paths, pathsCounter, True)
 
