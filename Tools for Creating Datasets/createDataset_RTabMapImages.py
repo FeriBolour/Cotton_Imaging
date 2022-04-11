@@ -21,7 +21,7 @@ def copy_images(path, directory, Dataset_Path, is_depth = False):
         files = glob.glob (path + "/*.jpg")
     
     files = sorted(files, key=get_key)
-    counter = 1
+    counter = 0
     filename = directory[directory.rfind('/')+1:]
 
     for myFile in files:
@@ -35,8 +35,8 @@ def copy_images(path, directory, Dataset_Path, is_depth = False):
 
 #----------------------------------------------------------    
 
-rgb_dataset = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/RGB Dataset'
-depth_dataset = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/Depth Dataset'
+rgb_dataset = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/RGB Dataset 3'
+depth_dataset = '/var/Data/Cotton Imaging Datasets/Annotation Dataset/Dataset For Annotation/RTabMap Images Dataset/Depth Dataset 3'
 
 parser = argparse.ArgumentParser(description='Create Dataset')
 parser.add_argument("directory", help="Path to the Experiments directory")
